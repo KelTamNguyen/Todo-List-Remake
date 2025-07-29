@@ -1,11 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>Document</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add_task,create_new_folder,folder,list" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <nav id="sidebar" class="sidebar">
+      <ul class="project-list">
+        <li>
+          <span class="material-symbols-outlined">folder</span>
+          <h2>Priority</h2>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">folder</span>
+          <h2>Projects</h2>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">folder</span>
+          <h2>Personal</h2>
+        </li>
+        <li><span class="material-symbols-outlined">folder</span>
+          <h2>Work</h2>
+        </li>
+        <li class="active">
+          <span class="material-symbols-outlined">list</span>
+          <h2>Today</h2>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">list</span>
+          <h2>Next Week</h2>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">list</span>
+          <h2>New brand identity</h2>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">list</span>
+          <h2>Share your work</h2>
+        </li>
+      </ul>
+      <div id="actions">
+        <span class="material-symbols-outlined action-icon">create_new_folder</span>
+        <span class="material-symbols-outlined action-icon">add_task</span>
+      </div>
+    </nav>
+    <main>
+      <div class="project">
+        <h1>Today</h1>
+        <ul class="todo-list">
+          <li>
+            <div class="checkbox"></div>
+            <p>Master the art of speaking llama language.</p>
+          </li>
+          <li>
+            <div class="checkbox"></div>
+            <p>Conquer Mount Everest using a pogo stick.</p>
+          </li>
+          <li>
+            <div class="checkbox checked"></div>
+            <p class="linethrough">Bake a cake made entirely made of rainbows and unicorns.</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <dialog>
+      <form action=""></form>
+    </dialog>
+  </body>
+  </script>
 </html>
