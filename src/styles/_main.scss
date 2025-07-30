@@ -1,4 +1,9 @@
-@use "vars" as theme;
+@use "theme";
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-Regular.ttf");
+}
 
 main {
   width: 80%;
@@ -9,49 +14,99 @@ main {
   box-sizing: border-box;
 }
 
-ul.todo-list {
+.todo-list {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  li {
-    margin: 0;
-    padding: 0;
+  overflow-y: auto;
+}
+
+.todo {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  div.todo-label {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    div.checkbox {
-      width: 1.25rem;
-      height: 1.25rem;
-      border: solid 2px theme.$secondary-color-dark;
-      border-radius: 50%;
-      cursor: pointer;
-      &:hover {
-        background-color: theme.$accent-color;
+    justify-content: space-between;
+    div.todo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      div.checkbox {
+        width: 1.25rem;
+        height: 1.25rem;
+        border: solid 2px theme.$secondary-color-dark;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+          background-color: theme.$accent-color;
+        }
+        &.checked {
+          background-color: theme.$accent-color;
+          &::after {
+            content: "✓";
+            display: block;
+            color: theme.$primary-color;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-weight: bold;
+            /* Font family needs to be Noto Sans because Rodin and the ✓ symbol do not get along*/
+            font-family: "Noto Sans", sans-serif;
+          }
+        }
       }
     }
-    p {
-      margin: 0;
-      padding: 0;
-      font-size: 1.25rem;
-      color: theme.$text-color;
+    div.todo-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      p {
+        font-size: 0.75rem;
+        color: theme.$secondary-color-dark;
+      }
+      span {
+        color: theme.$secondary-color-dark;
+        cursor: pointer;
+        &:hover {
+          color: theme.$text-color;
+        }
+      }
     }
   }
-}
-
-.checked {
-  background-color: theme.$accent-color;
-  &::after {
-    content: "✓";
-    display: inline-block;
-    color: theme.$primary-color;
-    width: 100%;
-    height: 100%;
-    text-align: center;
+  p.todo-description {
+    font-size: 1rem;
+    color: theme.$secondary-color-dark;
   }
 }
+.todo p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  color: theme.$text-color;
+}
 
-.linethrough {
-  text-decoration: line-through;
+%priority-indicator {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid theme.$secondary-color-dark;
+  border-radius: 4px;
+}
+
+.priority-indicator-low {
+  @extend %priority-indicator;
+  background-color: green;
+}
+
+.priority-indicator-medium {
+  @extend %priority-indicator;
+  background-color: yellow;
+}
+
+.priority-indicator-high {
+  @extend %priority-indicator;
+  background-color: red;
 }

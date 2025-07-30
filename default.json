@@ -1,0 +1,29 @@
+{
+  "name": "Today",
+  "tasks": [
+    {
+      "title": "Master the art of speaking llama language.",
+      "description": "",
+      "dueDate": "7/30/2025",
+      "priority": "low",
+      "isCompleted": false,
+      "id": "334d2ebf-7862-4341-8165-c6b5c22a6287"
+    },
+    {
+      "title": "Conquer Mount Everest using a pogo stick.",
+      "description": "",
+      "dueDate": "8/4/2025",
+      "priority": "medium",
+      "isCompleted": false,
+      "id": "c1cba57e-92f6-489a-971c-a1d9466db5fa"
+    },
+    {
+      "title": "Master the art of speaking llama language.",
+      "description": "",
+      "dueDate": "8/13/2025",
+      "priority": "high",
+      "isCompleted": false,
+      "id": ""
+    }
+  ]
+}
